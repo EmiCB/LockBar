@@ -1,0 +1,7 @@
+name: Lockbar
+version: '${project.version}'
+main: com.emicb.lockbar.Lockbar
+api-version: 1.18
+prefix: LockBar
+author: Emi Brown
+description: '${project.description}'
