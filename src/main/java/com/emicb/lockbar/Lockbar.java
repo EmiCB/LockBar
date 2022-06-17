@@ -1,5 +1,6 @@
 package com.emicb.lockbar;
 
+import com.emicb.lockbar.listeners.InventoryChangeListener;
 import com.emicb.lockbar.listeners.ItemDropListener;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -13,6 +14,7 @@ public final class Lockbar extends JavaPlugin {
 
         // enable listeners
         Bukkit.getServer().getPluginManager().registerEvents(new ItemDropListener(), this);
+        Bukkit.getServer().getPluginManager().registerEvents(new InventoryChangeListener(), this);
     }
 
     @Override
