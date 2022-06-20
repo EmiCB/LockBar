@@ -5,3 +5,7 @@ api-version: 1.18
 prefix: LockBar
 author: Emi Brown
 description: '${project.description}'
+commands:
+  lock:
+    description: 'Locks all inventory slots.'
+    usage: '/lock'
