@@ -7,7 +7,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
 
-public class Lock implements CommandExecutor {
+public class LockAll implements CommandExecutor {
     private static final String LOCK_ALL_PERM = Lockbar.PERM_PREFIX + ".lock-all";
 
     @Override
@@ -19,12 +19,12 @@ public class Lock implements CommandExecutor {
         }
 
         // pull from config and toggle
-        FileConfiguration config = Bukkit.getPluginManager().getPlugin("lockbar").getConfig();
+        FileConfiguration config = Lockbar.getInstance().getConfig();
 
         boolean locked = !config.getBoolean("lock-all");
         config.set("lock-all", locked);
 
-        Bukkit.broadcastMessage("Inventory lock: " + locked);
+        sender.sendMessage("Global inventory lock: " + locked);
         return true;
     }
 }

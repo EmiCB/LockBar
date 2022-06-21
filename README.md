@@ -7,9 +7,9 @@ _**Requires Java 11+**_
 
 ## Commands
 
-| Command | Description                         | Permission |
-|---------|-------------------------------------|------------|
-| `/lock` | locks entire inventory for everyone | `lock-all` |
+| Command | Description                         |
+|---------|-------------------------------------|
+| `/lock` | locks entire inventory for everyone |
 
 ## Config
 
