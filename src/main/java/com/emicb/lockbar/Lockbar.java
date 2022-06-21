@@ -1,6 +1,7 @@
 package com.emicb.lockbar;
 
 import com.emicb.lockbar.commands.LockAll;
+import com.emicb.lockbar.commands.LockBar;
 import com.emicb.lockbar.listeners.InventoryChangeListener;
 import com.emicb.lockbar.listeners.ItemDropListener;
 import org.bukkit.Bukkit;
@@ -27,7 +28,8 @@ public final class Lockbar extends JavaPlugin {
         pluginManager.registerEvents(new InventoryChangeListener(), this);
 
         // register commands
-        getServer().getPluginCommand("lock").setExecutor(new LockAll());
+        getCommand("lock-all").setExecutor(new LockAll());
+        getCommand("lock-bar").setExecutor(new LockBar());
 
         // register permissions
         Permission parent = new Permission(PERM_PREFIX + ".*");

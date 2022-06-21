@@ -1,6 +1,6 @@
 package com.emicb.lockbar.listeners;
 
-import org.bukkit.Bukkit;
+import com.emicb.lockbar.Lockbar;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -17,7 +17,9 @@ public class ItemDropListener implements Listener {
      */
     @EventHandler
     public void OnItemDrop(PlayerDropItemEvent event) {
-        FileConfiguration config = Bukkit.getPluginManager().getPlugin("lockbar").getConfig();
+        FileConfiguration config = Lockbar.getInstance().getConfig();
+
+        // check if global inventory lock is enabled
         if (config.getBoolean("lock-all")) {
             event.setCancelled(true);
         }

@@ -7,9 +7,10 @@ _**Requires Java 11+**_
 
 ## Commands
 
-| Command | Description                         |
-|---------|-------------------------------------|
-| `/lock` | locks entire inventory for everyone |
+| Command     | Description                         |
+|-------------|-------------------------------------|
+| `/lock-all` | locks entire inventory for everyone |
+| `/lock-bar` | locks entire hot bar for everyone   |
 
 ## Config
 
