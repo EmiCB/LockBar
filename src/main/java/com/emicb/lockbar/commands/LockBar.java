@@ -22,6 +22,7 @@ public class LockBar implements CommandExecutor {
 
         boolean locked = !config.getBoolean("lock-bar");
         config.set("lock-bar", locked);
+        Lockbar.getInstance().saveConfig();
 
         sender.sendMessage("Global hotbar lock: " + locked);
         return true;

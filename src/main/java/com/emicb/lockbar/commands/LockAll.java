@@ -23,6 +23,7 @@ public class LockAll implements CommandExecutor {
 
         boolean locked = !config.getBoolean("lock-all");
         config.set("lock-all", locked);
+        Lockbar.getInstance().saveConfig();
 
         sender.sendMessage("Global inventory lock: " + locked);
         return true;

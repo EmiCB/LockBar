@@ -22,6 +22,7 @@ public final class Lockbar extends JavaPlugin {
     public void onEnable() {
         plugin = this;
         PluginManager pluginManager = Bukkit.getPluginManager();
+        saveDefaultConfig();
 
         // register listeners
         pluginManager.registerEvents(new ItemDropListener(), this);
@@ -34,9 +35,6 @@ public final class Lockbar extends JavaPlugin {
         // register permissions
         Permission parent = new Permission(PERM_PREFIX + ".*");
         pluginManager.addPermission(parent);
-
-        // save config
-        saveDefaultConfig();
     }
 
     @Override
@@ -44,6 +42,6 @@ public final class Lockbar extends JavaPlugin {
 
     }
 
-    /** @returns The current instance of the plugin. */
+    /** @return The current instance of the plugin. */
     public static Lockbar getInstance() { return plugin; }
 }
