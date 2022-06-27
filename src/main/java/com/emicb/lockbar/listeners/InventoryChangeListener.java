@@ -1,6 +1,7 @@
 package com.emicb.lockbar.listeners;
 
 import com.emicb.lockbar.Lockbar;
+import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.HumanEntity;
@@ -14,6 +15,7 @@ import org.bukkit.inventory.ItemStack;
  * Listens for events where the player's inventory could be changed.
  */
 public class InventoryChangeListener implements Listener {
+    private final ItemStack EMPTY = new ItemStack(Material.AIR);
 
     /**
      * Cancel any InventoryClick event.
@@ -31,14 +33,18 @@ public class InventoryChangeListener implements Listener {
 
         // check if global inventory lock is enabled
         if (config.getBoolean("lock-all")) {
-            player.setItemOnCursor(new ItemStack(Material.AIR));
+            player.setItemOnCursor(EMPTY);
             event.setCancelled(true);
         }
 
         // check if global hotbar lock is enabled
         if (config.getBoolean("lock-bar")) {
             if (event.getSlotType().equals(InventoryType.SlotType.QUICKBAR)) {
-                player.setItemOnCursor(new ItemStack(Material.AIR));
+                // remove item on cursor when attempting to pick up from locked slot
+                if (event.getCursor().getAmount() == 0) {
+                    player.setItemOnCursor(EMPTY);
+                }
+
                 event.setCancelled(true);
             }
 
