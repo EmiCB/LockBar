@@ -7,7 +7,7 @@ author: Emi Brown
 description: '${project.description}'
 commands:
   lock-all:
-    description: 'Globally locks all inventory slots.'
+    description: 'Globally locks all inventories.'
     usage: '/lock-all'
   lock-bar:
     description: 'Globally locks all hotbar slots.'

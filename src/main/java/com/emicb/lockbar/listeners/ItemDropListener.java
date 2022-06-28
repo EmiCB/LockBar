@@ -31,11 +31,10 @@ public class ItemDropListener implements Listener {
         // check if global hotbar lock is enabled
         if (config.getBoolean("lock-bar")) {
             // check material types to determine if item is in hotbar
-            Material drop_type = event.getItemDrop().getItemStack().getType();
+            Material dropType = event.getItemDrop().getItemStack().getType();
             for (int i = 0; i < 8; i++) {
                 ItemStack slot = event.getPlayer().getInventory().getItem(i);
-                if (slot != null && drop_type.equals(slot.getType())) {
-                    Bukkit.getConsoleSender().sendMessage("Items match!");
+                if (slot != null && dropType.equals(slot.getType())) {
                     event.setCancelled(true);
                 }
             }

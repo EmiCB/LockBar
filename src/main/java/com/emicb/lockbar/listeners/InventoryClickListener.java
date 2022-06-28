@@ -1,7 +1,6 @@
 package com.emicb.lockbar.listeners;
 
 import com.emicb.lockbar.Lockbar;
-import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.HumanEntity;
@@ -14,7 +13,7 @@ import org.bukkit.inventory.ItemStack;
 /**
  * Listens for events where the player's inventory could be changed.
  */
-public class InventoryChangeListener implements Listener {
+public class InventoryClickListener implements Listener {
     private final ItemStack EMPTY = new ItemStack(Material.AIR);
 
     /**
