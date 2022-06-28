@@ -6,6 +6,9 @@ prefix: LockBar
 author: Emi Brown
 description: '${project.description}'
 commands:
-  lock:
-    description: 'Locks all inventory slots.'
-    usage: '/lock'
+  lock-all:
+    description: 'Globally locks all inventories.'
+    usage: '/lock-all'
+  lock-bar:
+    description: 'Globally locks all hotbar slots.'
+    usage: '/lock-bar'
