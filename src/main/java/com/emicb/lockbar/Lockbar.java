@@ -3,6 +3,7 @@ package com.emicb.lockbar;
 import com.emicb.lockbar.commands.LockAll;
 import com.emicb.lockbar.commands.LockBar;
 import com.emicb.lockbar.commands.LockSlot;
+import com.emicb.lockbar.commands.UnlockSlot;
 import com.emicb.lockbar.listeners.BlockPlaceListener;
 import com.emicb.lockbar.listeners.InventoryClickListener;
 import com.emicb.lockbar.listeners.InventoryDragListener;
@@ -37,6 +38,7 @@ public final class Lockbar extends JavaPlugin {
         getCommand("lock-all").setExecutor(new LockAll());
         getCommand("lock-bar").setExecutor(new LockBar());
         getCommand("lock-slot").setExecutor(new LockSlot());
+        getCommand("unlock-slot").setExecutor(new UnlockSlot());
 
         // register permissions
         Permission parent = new Permission(PERM_PREFIX + ".*");

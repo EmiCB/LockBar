@@ -8,8 +8,8 @@ import org.bukkit.configuration.file.FileConfiguration;
 
 import java.util.List;
 
-public class LockSlot implements CommandExecutor {
-    private static final String LOCK_SLOT_PERM = Lockbar.PERM_PREFIX + ".lock-slot";
+public class UnlockSlot implements CommandExecutor {
+    private static final String LOCK_SLOT_PERM = Lockbar.PERM_PREFIX + ".unlock-slot";
     private final int SLOT_MIN = 0;
     private final int SLOT_MAX = 8;
 
@@ -49,8 +49,8 @@ public class LockSlot implements CommandExecutor {
 
         List<Integer> lockedSlots = config.getIntegerList("locked-slots");
         for (int i = min; i <= max; i++) {
-            if (lockedSlots.contains(i)) continue;
-            lockedSlots.add(i);
+            int ind = lockedSlots.indexOf(i);
+            if (ind != -1) lockedSlots.remove(ind);
         }
 
         config.set("locked-slots", lockedSlots);
