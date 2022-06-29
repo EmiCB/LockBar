@@ -7,10 +7,11 @@ _**Requires Java 11+**_
 
 ## Commands
 
-| Command     | Description                         |
-|-------------|-------------------------------------|
-| `/lock-all` | locks entire inventory for everyone |
-| `/lock-bar` | locks entire hot bar for everyone   |
+| Command                    | Description                                        |
+|----------------------------|----------------------------------------------------|
+| `/lock-all`                | locks entire inventory for all players             |
+| `/lock-bar`                | locks entire hot bar for all players               |
+| `/lock-slot <begin> <end>` | locks the specified range of slots for all players |
 
 Note: Bukkit API makes stopping item drops from specific slots difficult to detect. My current workaround compares the 
 dropped item type to the item type(s) in the locked slot(s). This means that **dropping items from an unlocked slot will
