@@ -7,8 +7,14 @@ author: Emi Brown
 description: '${project.description}'
 commands:
   lock-all:
-    description: 'Globally locks all inventories.'
+    description: 'Globally locks all player inventories.'
     usage: '/lock-all'
   lock-bar:
-    description: 'Globally locks all hotbar slots.'
+    description: 'Globally locks all player hotbar slots.'
     usage: '/lock-bar'
+  lock-slot:
+    description: 'Globally lock range of specified slot(s).'
+    usage: '/lock-slot <start> <end>'
+  unlock-slot:
+    description: 'Globally unlock range of specified slot(s)'
+    usage: '/unlock-slot <start> <end>'
