@@ -17,12 +17,12 @@ It should show up in the target directory. Make sure to update your version numb
 
 ## Commands
 
-| Command                                   | Description                                          |
-|-------------------------------------------|------------------------------------------------------|
-| `/lock-all`                               | locks entire inventory for all players               |
-| `/lock-bar`                               | locks entire hot bar for all players                 |
-| `/lock-slot <begin> <optional_end>`       | locks the specified range of slots for all players   |
-| `/unlocklock-slot <begin> <optional_end>` | unlocks the specified range of slots for all players |
+| Command                               | Description                                          |
+|---------------------------------------|------------------------------------------------------|
+| `/lock-all`                           | locks entire inventory for all players               |
+| `/lock-bar`                           | locks entire hot bar for all players                 |
+| `/lock-slot <begin> <optional_end>`   | locks the specified range of slots for all players   |
+| `/unlock-slot <begin> <optional_end>` | unlocks the specified range of slots for all players |
 
 ## Config
 
