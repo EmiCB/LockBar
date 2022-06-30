@@ -31,14 +31,15 @@ public class UnlockSlot implements CommandExecutor {
         int min, max;
         try {
             min = Integer.parseInt(args[0]);
-            max = Integer.parseInt(args[1]);
+            if (args.length == 1) max = min;
+            else max = Integer.parseInt(args[1]);
         } catch (NumberFormatException exception) {
             sender.sendMessage("Arguments must be valid integers!");
             return false;
         }
 
         // check if arguments within valid range
-        if (!(SLOT_MIN <= min && max <= SLOT_MAX && min <= max)) {
+        if (min < SLOT_MIN || max > SLOT_MAX || min > max) {
             sender.sendMessage("Invalid range!");
             return false;
         }
@@ -55,6 +56,7 @@ public class UnlockSlot implements CommandExecutor {
 
         config.set("locked-slots", lockedSlots);
         Lockbar.getInstance().saveConfig();
+        sender.sendMessage("Currently locked slots: " + lockedSlots);
         return true;
     }
 }
