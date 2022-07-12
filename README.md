@@ -37,6 +37,7 @@ It should show up in the target directory. Make sure to update your version numb
 **Example:** only the first two hotbar slots will be locked
 
 ```yaml
+exempt-ops: true
 lock-all: false
 lock-bar: false
 locked-slots:
