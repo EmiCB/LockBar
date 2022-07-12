@@ -33,6 +33,9 @@ public class InventoryClickListener implements Listener {
         // get player
         HumanEntity player = event.getWhoClicked();
 
+        // check if op exemption enabled
+        if (config.getBoolean("exempt-ops") && player.isOp()) return;
+
         // check if global inventory lock is enabled
         if (config.getBoolean("lock-all")) {
             player.setItemOnCursor(EMPTY);

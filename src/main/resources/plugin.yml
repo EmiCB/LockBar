@@ -18,3 +18,6 @@ commands:
   unlock-slot:
     description: 'Globally unlock range of specified slot(s)'
     usage: '/unlock-slot <start> <end>'
+  unlock-ops:
+    description: 'Toggles server OP exemption from all inventory locks'
+    usage: '/unlock-ops'

@@ -23,6 +23,9 @@ public class ItemDropListener implements Listener {
     public void OnItemDrop(PlayerDropItemEvent event) {
         FileConfiguration config = Lockbar.getInstance().getConfig();
 
+        // check if op exemption enabled
+        if (config.getBoolean("exempt-ops") && event.getPlayer().isOp()) return;
+
         // check if global inventory lock is enabled
         if (config.getBoolean("lock-all")) {
             event.setCancelled(true);

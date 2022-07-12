@@ -19,18 +19,20 @@ It should show up in the target directory. Make sure to update your version numb
 
 | Command                               | Description                                          |
 |---------------------------------------|------------------------------------------------------|
-| `/lock-all`                           | locks entire inventory for all players               |
-| `/lock-bar`                           | locks entire hot bar for all players                 |
+| `/lock-all`                           | toggles locking entire inventory for all players     |
+| `/lock-bar`                           | toggles locking entire hot bar for all players       |
 | `/lock-slot <begin> <optional_end>`   | locks the specified range of slots for all players   |
 | `/unlock-slot <begin> <optional_end>` | unlocks the specified range of slots for all players |
+| `/unlock-ops`                         | toggles server OPs exemption from inventory locking  |
 
 ## Config
 
-| Key            | Type           | Description                                        |
-|----------------|----------------|----------------------------------------------------|
-| `lock-all`     | `boolean`      | enable / disable global inventory lock             |
-| `lock-bar`     | `boolean`      | enable / disable global hotbar lock                |
-| `locked-slots` | `integer list` | list of all currently globally locked hotbar slots |
+| Key            | Type           | Description                                                  |
+|----------------|----------------|--------------------------------------------------------------|
+| `exempt-ops`   | `boolean`      | enable / disable exempting server OPs from inventory locking |
+| `lock-all`     | `boolean`      | enable / disable global inventory lock                       |
+| `lock-bar`     | `boolean`      | enable / disable global hotbar lock                          |
+| `locked-slots` | `integer list` | list of all currently globally locked hotbar slots           |
 
 **Example:** only the first two hotbar slots will be locked
 

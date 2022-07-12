@@ -13,6 +13,9 @@ public class BlockPlaceListener implements Listener {
     public void OnBlockPlace(BlockPlaceEvent event) {
         FileConfiguration config = Lockbar.getInstance().getConfig();
 
+        // check if op exemption enabled
+        if (config.getBoolean("exempt-ops") && event.getPlayer().isOp()) return;
+
         // check if whole inventory or hotbar lock are enabled
         if (config.getBoolean("lock-all") || config.getBoolean("lock-bar")) {
             event.setCancelled(true);

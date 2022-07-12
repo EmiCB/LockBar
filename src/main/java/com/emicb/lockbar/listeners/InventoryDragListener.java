@@ -14,6 +14,9 @@ public class InventoryDragListener implements Listener {
         FileConfiguration config = Lockbar.getInstance().getConfig();
         List<Integer> lockedSlots = config.getIntegerList("locked-slots");
 
+        // check if op exemption enabled
+        if (config.getBoolean("exempt-ops") && event.getWhoClicked().isOp()) return;
+
         // check if locking enabled
         if (config.getBoolean("lock-bar")) {
             lockedSlots.clear();
