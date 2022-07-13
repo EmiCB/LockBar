@@ -1,15 +1,23 @@
 package com.emicb.lockbar.commands;
 
 import com.emicb.lockbar.Lockbar;
-import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
 
+/**
+ * The command to lock or unlock the entire inventory for all players.
+ * Command: "/lock-all"
+ */
 public class LockAll implements CommandExecutor {
+    /** The permission level required to use this command. */
     private static final String LOCK_ALL_PERM = Lockbar.PERM_PREFIX + ".lock-all";
 
+    /**
+     * Toggles the global inventory lock.
+     * <br><br> {@inheritDoc}
+     */
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         // exit if no sufficient permission

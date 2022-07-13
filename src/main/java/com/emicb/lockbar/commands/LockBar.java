@@ -6,9 +6,18 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
 
+/**
+ * The command to lock or unlock the hotbar for all players.
+ * Command: "/lock-bar"
+ */
 public class LockBar implements CommandExecutor {
+    /** The permission level required to use this command. */
     private static final String LOCK_BAR_PERM = Lockbar.PERM_PREFIX + ".lock-bar";
 
+    /**
+     * Toggles the global hotbar lock.
+     * <br><br> {@inheritDoc}
+     */
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         // exit if no sufficient permission

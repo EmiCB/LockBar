@@ -8,11 +8,22 @@ import org.bukkit.configuration.file.FileConfiguration;
 
 import java.util.List;
 
+/**
+ * The command to unlock a singular slot or a specified range of slots for all players.
+ * Command: "/unlock-slot"
+ */
 public class UnlockSlot implements CommandExecutor {
+    /** The permission level required to use this command. */
     private static final String LOCK_SLOT_PERM = Lockbar.PERM_PREFIX + ".unlock-slot";
+    /** The minimum slot index that can be used. */
     private final int SLOT_MIN = 0;
+    /** The maximum slot index that can be used. */
     private final int SLOT_MAX = 8;
 
+    /**
+     * Unlocks the specified slot range if valid.
+     * <br><br> {@inheritDoc}
+     */
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         // exit if no sufficient permission

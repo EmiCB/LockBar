@@ -8,7 +8,14 @@ import org.bukkit.event.block.BlockPlaceEvent;
 
 import java.util.List;
 
+/**
+ * Listens for events where a block is placed.
+ */
 public class BlockPlaceListener implements Listener {
+    /**
+     * Cancel block place events that come from a locked slot.
+     * @param event The BlockPlaceEvent.
+     */
     @EventHandler
     public void OnBlockPlace(BlockPlaceEvent event) {
         FileConfiguration config = Lockbar.getInstance().getConfig();

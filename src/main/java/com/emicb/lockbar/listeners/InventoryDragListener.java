@@ -8,7 +8,16 @@ import org.bukkit.event.inventory.InventoryDragEvent;
 
 import java.util.List;
 
+// TODO: can be moved into a singular InventoryChange class with InventoryClick?
+
+/**
+ * Listens for events where an item is dragged in the inventory.
+ */
 public class InventoryDragListener implements Listener {
+    /**
+     * Cancels inventory drags into locked slots.
+     * @param event The InventoryDragEvent.
+     */
     @EventHandler
     public void OnInventoryDrag(InventoryDragEvent event) {
         FileConfiguration config = Lockbar.getInstance().getConfig();

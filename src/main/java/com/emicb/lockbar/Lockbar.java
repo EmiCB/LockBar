@@ -19,35 +19,48 @@ public final class Lockbar extends JavaPlugin {
     /** LockBar permission prefix. */
     public static final String PERM_PREFIX = "lockbar";
 
+    /** {@inheritDoc} */
     @Override
     public void onEnable() {
         plugin = this;
         PluginManager pluginManager = Bukkit.getPluginManager();
         saveDefaultConfig();
 
-        // register listeners
-        pluginManager.registerEvents(new ItemDropListener(), this);
-        pluginManager.registerEvents(new InventoryClickListener(), this);
-        pluginManager.registerEvents(new BlockPlaceListener(), this);
-        pluginManager.registerEvents(new InventoryDragListener(), this);
-
-        // register commands
-        getCommand("lock-all").setExecutor(new LockAll());
-        getCommand("lock-bar").setExecutor(new LockBar());
-        getCommand("lock-slot").setExecutor(new LockSlot());
-        getCommand("unlock-slot").setExecutor(new UnlockSlot());
-        getCommand("unlock-ops").setExecutor(new UnlockOps());
+        // register plugin essentials
+        registerEventListeners(pluginManager);
+        registerCommands();
 
         // register permissions
         Permission parent = new Permission(PERM_PREFIX + ".*");
         pluginManager.addPermission(parent);
     }
 
+    /** {@inheritDoc} */
     @Override
     public void onDisable() {
-
+        saveConfig();
     }
 
     /** @return The current instance of the plugin. */
     public static Lockbar getInstance() { return plugin; }
+
+    /**
+     * Registers LockBar's event listeners.
+     * @param pluginManager The current PluginManager.
+     */
+    private void registerEventListeners(PluginManager pluginManager) {
+        pluginManager.registerEvents(new ItemDropListener(), this);
+        pluginManager.registerEvents(new InventoryClickListener(), this);
+        pluginManager.registerEvents(new BlockPlaceListener(), this);
+        pluginManager.registerEvents(new InventoryDragListener(), this);
+    }
+
+    /** Registers LockBar's commands. */
+    private void registerCommands() {
+        getCommand("lock-all").setExecutor(new LockAll());
+        getCommand("lock-bar").setExecutor(new LockBar());
+        getCommand("lock-slot").setExecutor(new LockSlot());
+        getCommand("unlock-slot").setExecutor(new UnlockSlot());
+        getCommand("unlock-ops").setExecutor(new UnlockOps());
+    }
 }

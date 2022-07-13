@@ -16,10 +16,11 @@ import java.util.List;
  * Listens for events where the player's inventory could be changed.
  */
 public class InventoryClickListener implements Listener {
+    /** The default item for an empty cursor. */
     private final ItemStack EMPTY = new ItemStack(Material.AIR);
 
     /**
-     * Cancel any InventoryClick event.
+     * Cancel all InventoryClick events in a locked slot.
      * @param event The InventoryClickEvent.
      */
     @EventHandler

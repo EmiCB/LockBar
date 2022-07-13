@@ -11,12 +11,11 @@ import org.bukkit.inventory.ItemStack;
 import java.util.List;
 
 /**
- * Listens for events where items could be dropped.
+ * Listens for events where items are dropped.
  */
 public class ItemDropListener implements Listener {
-
     /**
-     * Cancel any item drops.
+     * Cancel any item drops from locked slots.
      * @param event The ItemDropEvent.
      */
     @EventHandler

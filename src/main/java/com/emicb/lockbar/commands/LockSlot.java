@@ -8,11 +8,22 @@ import org.bukkit.configuration.file.FileConfiguration;
 
 import java.util.List;
 
+/**
+ * The command to lock a single slot or a specified range of slots for all players.
+ * Command: "/lock-slot"
+ */
 public class LockSlot implements CommandExecutor {
+    /** The permission level required to use this command. */
     private static final String LOCK_SLOT_PERM = Lockbar.PERM_PREFIX + ".lock-slot";
+    /** The minimum slot index that can be used. */
     private final int SLOT_MIN = 0;
+    /** The maximum slot index that can be used. */
     private final int SLOT_MAX = 8;
 
+    /**
+     * Locks the specified range of slots if they are valid.
+     * <br><br> {@inheritDoc}
+     */
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         // exit if no sufficient permission

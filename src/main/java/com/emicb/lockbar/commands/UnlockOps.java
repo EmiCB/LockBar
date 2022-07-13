@@ -6,9 +6,18 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
 
+/**
+ * The command to toggle if server OPs are affected by inventory locking.
+ * Command: "/unlock-ops"
+ */
 public class UnlockOps implements CommandExecutor {
+    /** The permission level required to use this command. */
     private static final String UNLOCK_OPS_PERM = Lockbar.PERM_PREFIX + ".unlock-ops";
 
+    /**
+     * Toggles if server OPs are affected by inventory locking.
+     * <br><br> {@inheritDoc}
+     */
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         // exit if no sufficient permissions
